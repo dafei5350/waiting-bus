@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+454654
+=======
+<view class='container'>
+  <map 
+		longitude="{{longitude}}" 
+		latitude="{{latitude}}" 
+		markers="{{markers}}" 
+		covers="{{covers}}" 
+		show-location>
+  </map>
+	<view class="suspension">
+		<view class="tips"></view>
+	</view>
+</view>
+>>>>>>> 9cb8d95 (sdk)
