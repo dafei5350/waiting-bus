@@ -12,7 +12,7 @@
     "minified": true,
     "newFeature": false,
     "coverView": true,
-    "nodeModules": true,
+    "nodeModules": false,
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
@@ -20,15 +20,11 @@
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
-<<<<<<< HEAD
-    "compileHotReLoad": false,
-=======
     "compileHotReLoad": true,
->>>>>>> 9cb8d95 (sdk)
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": false,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -43,13 +39,9 @@
     "showES6CompileOption": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.1",
-<<<<<<< HEAD
-  "appid": "wxae27f224df413f73",
-=======
+  "libVersion": "2.19.2",
   "appid": "wx846a2a830abcf7b3",
->>>>>>> 9cb8d95 (sdk)
-  "projectname": "%E5%AE%9E%E6%97%B6%E5%85%AC%E4%BA%A4-wl",
+  "projectname": "watiting-bus",
   "debugOptions": {
     "hidedInDevtools": []
   },

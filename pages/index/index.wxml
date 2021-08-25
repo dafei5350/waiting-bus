@@ -1,16 +1,29 @@
-<<<<<<< HEAD
-454654
-=======
 <view class='container'>
+	<view class="city" style="top:{{statusBar}}px">
+		{{ city }}
+	</view>
   <map 
 		longitude="{{longitude}}" 
 		latitude="{{latitude}}" 
 		markers="{{markers}}" 
-		covers="{{covers}}" 
+		scale="16"
 		show-location>
   </map>
-	<view class="suspension">
-		<view class="tips"></view>
+	<view class="location" bindtap="getLocation">
+		<text class="iconfont icon-zhunxing" style="font-size: 55rpx; color: #374355;"></text>
+	</view>
+	<view 
+		class="suspension"
+		style="height:{{height}}"
+		bind:touchstart="touchStart"
+		bind:touchend="touchEnd"
+		bind:touchcancel="touchCancel">
+		<view class="tips">
+			<text class="iconfont icon-updown {{height === '40%'?'up':'down'}}"></text>
+		</view>
+		<view class="search">
+			<text class="cuIcon-search lg text-black"></text>
+				搜公交地铁线路、站点、目的地
+		</view>
 	</view>
 </view>
->>>>>>> 9cb8d95 (sdk)
