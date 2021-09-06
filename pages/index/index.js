@@ -16,6 +16,14 @@ Page({
     statusBar: null,
     height: '40%',
     city: null,
+    circles:[{
+      latitude: '23.099994',
+      longitude: '113.324520',
+      color: '#FF0000DD',
+      fillColor: '#7cb5ec88',
+      radius: 400,
+      strokeWidth: 2
+    }],
   },
 
   onLoad() {
@@ -52,6 +60,8 @@ Page({
           latitude: res.latitude,
           longitude: res.longitude,
           speed: res.speed,
+          [`circles[0].latitude`]: res.latitude,
+          [`circles[0].longitude`]: res.longitude,
         })
         that.getCity(res.latitude, res.longitude)
       }

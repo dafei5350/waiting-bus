@@ -7,6 +7,9 @@
 		latitude="{{latitude}}" 
 		markers="{{markers}}" 
 		scale="16"
+		circles="{{circles}}"
+		show-scale="{{true}}"
+		enable-overlooking="{{true}}"
 		show-location>
   </map>
 	<view class="location" bindtap="getLocation">
