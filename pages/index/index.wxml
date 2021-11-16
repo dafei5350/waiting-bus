@@ -22,7 +22,7 @@
 		bind:touchend="touchEnd"
 		bind:touchcancel="touchCancel">
 		<view class="tips">
-			<text class="iconfont icon-updown {{height === '40%'?'up':'down'}}"></text>
+			<text class="iconfont icon-updown {{height <= '40%'?'up':'down'}}"></text>
 		</view>
 		<view class="search">
 			<text class="cuIcon-search lg text-black"></text>

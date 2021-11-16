@@ -1,7 +1,7 @@
 
 map {
   width: 100vw;
-  height: 65vh;
+  height: 100vh;
 }
 .city{
 	width: 200rpx;

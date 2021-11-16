@@ -19,10 +19,11 @@ Page({
     circles:[{
       latitude: '23.099994',
       longitude: '113.324520',
-      color: '#FF0000DD',
-      fillColor: '#7cb5ec88',
-      radius: 400,
-      strokeWidth: 2
+      color: '#7cb5ec',
+      fillColor: '#7cb5ec38',
+      radius: 300,
+      strokeWidth: 1,
+      level: 'abovebuildings'
     }],
   },
 
@@ -38,7 +39,7 @@ Page({
   },
   onShow: function () {
     qqmapsdk.search({
-      keyword: '华强',
+      keyword: '公交',
       success: function (res) {
         console.log(res);
       },
@@ -112,14 +113,27 @@ Page({
       } else if (Math.abs(xOffset) < Math.abs(yOffset) && Math.abs(yOffset) >= minOffset) {
         if (yOffset < 0) {
           console.log('向上滑动')
-          that.setData({
-            height: '85%'
-          })
+          if (that.data.height === '10%'){
+            that.setData({
+              height: '40%'
+            })
+          } else {
+            that.setData({
+              height: '85%'
+            })
+          }
         } else {
           console.log('向下滑动')
-          that.setData({
-            height: '40%'
-          })
+          if (that.data.height === '85%'){
+            that.setData({
+              height: '40%'
+            })
+          } else { 
+            that.setData({
+              height: '10%'
+            })
+          }
+
         }
       }
     } else {
