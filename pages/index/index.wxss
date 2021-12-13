@@ -4,7 +4,6 @@ map {
   height: 100vh;
 }
 .city{
-	width: 200rpx;
 	height: 65rpx;
 	border-radius: 20px;
 	position: fixed;
@@ -14,21 +13,22 @@ map {
 	z-index: 10;
 	box-shadow: 0px 0px 3px 2px rgba(177,177,177,0.23);
 	display: flex;
+	justify-content: center;
 	align-items: center;
-	padding: 0 10rpx;
+	padding: 0 15rpx;
 }
 .location{
 	position: fixed;
 	bottom: 45%;
-	right: 30rpx;
+	left: 30rpx;
 	width: 70rpx;
 	height: 70rpx;
-	border-radius: 50%;
+	border-radius: 20rpx;
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 0px 0px 5px 4px rgba(177,177,177,0.73);
+	box-shadow: 0px 0px 5px 4px rgba(177,177,177,0.13);
 }
 .location .location-img{
 	width: 55rpx;
@@ -66,7 +66,7 @@ map {
 	width: 100%;
 	height: 75rpx;
 	background-color: #F0F3F8;
-	border-radius: 15rpx;
+	border-radius: 5000rpx;
 	display: flex;
 	flex-direction: row;
 	align-items: center;

@@ -13,9 +13,9 @@ Page({
   data: {
     latitude: 34.75,
     longitude: 113.66,
-    statusBar: null,
+    CustomBar: app.globalData.CustomBar,
     height: '40%',
-    city: null,
+    cityInfo: null,
     circles:[{
       latitude: '23.099994',
       longitude: '113.324520',
@@ -26,16 +26,11 @@ Page({
       level: 'abovebuildings'
     }],
   },
-
   onLoad() {
     this.getLocation()
     qqmapsdk = new QQMapWX({
       key: 'QE3BZ-R7ICD-ZIS42-HCM3D-N2GY5-CZFWQ'
     });
-    this.setData({
-      statusBar: app.globalData.statusBar
-    })
-
   },
   onShow: function () {
     qqmapsdk.search({
@@ -73,12 +68,12 @@ Page({
     qqmapsdk.reverseGeocoder({
       sig: key.sig,
       location: {latitude, longitude} || '',
-      // location: '35.978283,115.86075',
       success(res){ 
         console.log("城市",res);
-        console.log(res.result.address_component.district);
         that.setData({
-          city: res.result.address_component.district
+          cityInfo: res.result.address_component 
+        }, res => {
+          that.getWeather()
         })
       },
       fail(err) {
@@ -140,4 +135,27 @@ Page({
       console.log('滑动时间过短', touchTime)
     }
   },
+  getWeather() {
+    let that = this
+    wx.pro.request({
+      url: `https://wis.qq.com/weather/common?source=pc&weather_type=observe|tips&province=${that.data.cityInfo.province}&county=${that.data.cityInfo.district}&city=${that.data.cityInfo.city}`,
+      method: 'GET',
+      header: {'content-type': 'application/json'}
+    }).then(res => {
+      console.log(res);
+      that.setData({
+        weather: res.data.data
+      })
+    }).catch(err => {
+      console.log(err)
+    }).finally(() => {
+
+    })
+  },
+  toCityList() {
+    wx.navigateTo({
+      url: '/pages/city-list/city-list',
+    })
+  }
+
 })
