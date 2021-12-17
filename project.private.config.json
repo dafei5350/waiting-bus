@@ -1,0 +1,23 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "选择城市",
+          "pathName": "pages/city-list/city-list",
+          "query": "city=%E6%B7%B1%E5%9C%B3%E5%B8%82",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

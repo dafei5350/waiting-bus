@@ -1,0 +1,31 @@
+.container{
+	width: 100%;
+	height: 150vh;
+	position: relative;
+	top: 0;
+}
+.move-container{
+	width: 100%;
+	height: 150vh;
+	position: absolute;
+	bottom: 0;
+}
+map {
+	width: 100%;
+	height: 75vh;
+	position: relative;
+	bottom: 0;
+	
+}
+.move-view{
+	width: 100%;
+	height: 95vh;
+	margin-top: 150rpx;
+	background-color: #fff;
+	border-top-left-radius: 50rpx;
+	border-top-right-radius: 50rpx;
+	position: fixed;
+	bottom: 0;
+	overflow: hidden;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}

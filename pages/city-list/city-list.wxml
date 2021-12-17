@@ -9,16 +9,40 @@
   </view>
 </view>
 <view class="city-container">
-  <block>
-    当前城市
+  <block wx:if="{{city}}">
+    <view class="location margin-bottom">
+      <view class="text-xl text-grey margin-bottom-sm">当前城市</view>
+      <view class="cu-tag line-green text-xl padding radius" bindtap="toCityBack">{{city}}</view>
+    </view>
   </block>
-  <block>
-    热门城市
+
+
+  <view class="hot-city margin-bottom">
+    <view class="text-xl text-grey margin-bottom-sm">热门城市</view>
+    <view class="city"> 
+      <block wx:for="{{hotCity}}" wx:key="{{index}}">
+        <view class="cu-tag line-red text-xl padding radius margin-bottom-sm" >{{item}}</view>
+      </block>
+    </view>
+  </view>
+
+  <block wx:for="{{list}}" wx:for-index="idx" wx:for-item="item">
+    <view class="padding" id="indexes-{{list[idx]}}" data-index="{{list[idx]}}">{{list[idx]}}</view>
+    <view class="subitem">
+      <block wx:for="{{cityList[item]}}" wx:index="key" wx:for-item="value">
+        <view class="cu-tag padding bg-white light margin-top-sm" bindtap="toSelected" data-val="{{value}}">
+          {{value}}
+        </view>
+      </block>
+    </view>
   </block>
-  城市列表 A-Z
 
 
 
-
+  <view class="indexBar" style="height:calc(100vh - {{CustomBar}}px - 50px)">
+    <view class="indexBar-box" bindtouchstart="tStart" bindtouchend="tEnd" catchtouchmove="tMove">
+      <view class="indexBar-item" wx:for="{{list}}" wx:key id="{{index}}" bindtouchstart="getCur" bindtouchend="setCur">{{list[index]}}</view>
+    </view>
+  </view>
 
 </view>

@@ -1,0 +1,21 @@
+<view class="container">
+	<movable-area class="move-container">
+		<map 
+			longitude="{{longitude}}" 
+			latitude="{{latitude}}" 
+			markers="{{markers}}" 
+			scale="16"
+			circles="{{circles}}"
+			show-scale="{{true}}"
+			enable-overlooking="{{true}}"
+			show-location>
+		</map>
+		<movable-view 
+			y="650rpx"
+			class="move-view" 
+			direction="vertical"
+			inertia="true">
+		
+		</movable-view>
+	</movable-area>
+</view>

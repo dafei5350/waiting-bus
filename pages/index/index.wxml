@@ -1,30 +1,34 @@
 <view class='container'>
-
-		<view class="city" style="top: {{CustomBar}}rpx" bindtap="toCityList">
-			<view class="margin-right">
-				{{cityInfo.city}}
-				<text class="cuIcon-rounddown lg text-black text-xl" ></text>
-			</view>
-			<block wx:if="{{weather}}">
-				{{ weather.observe.weather }} 
-				{{ weather.observe.degree}} ℃
-			</block>
+<!-- <view> -->
+	<view class="city" style="top: {{CustomBar}}rpx">
+		<view class="margin-right">
+			{{cityInfo.city}}
+			<text class="cuIcon-rounddown lg text-black text-xl" ></text>
 		</view>
-
-  <map 
-		longitude="{{longitude}}" 
-		latitude="{{latitude}}" 
-		markers="{{markers}}" 
-		scale="16"
-		circles="{{circles}}"
-		show-scale="{{true}}"
-		enable-overlooking="{{true}}"
-		show-location>
-  </map>
-	<view class="location" bindtap="getLocation">
-		<text class="iconfont icon-zhunxing" style="font-size: 50rpx; color: #374355;"></text>
+		<block wx:if="{{weather}}">
+			{{ weather.observe.weather }} 
+			{{ weather.observe.degree}} ℃
+		</block>
 	</view>
-	<view 
+	<movable-area class="move-container">
+		<map 
+			longitude="{{longitude}}" 
+			latitude="{{latitude}}" 
+			markers="{{markers}}" 
+			scale="16"
+			circles="{{circles}}"
+			show-scale="{{true}}"
+			enable-overlooking="{{true}}"
+			show-location>
+		</map>
+		<view class="location" bindtap="getLocation">
+			<text class="iconfont icon-zhunxing" style="font-size: 50rpx; color: #374355;"></text>
+		</view>
+		<movable-view class="move-view" direction="vertical">
+		
+		</movable-view>
+	</movable-area>
+	<!-- <view 
 		class="suspension"
 		style="height:{{height}}"
 		bind:touchstart="touchStart"
@@ -37,5 +41,5 @@
 			<text class="cuIcon-search lg text-black"></text>
 				搜公交线路、站点、目的地
 		</view>
-	</view>
+	</view> -->
 </view>

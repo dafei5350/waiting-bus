@@ -1,17 +1,12 @@
 import { promisifyAll, promisify } from './libs/wx-promise-pro'
 promisifyAll()
 
-const config = require('./config/index')
-// var QQMapWX = require('../../libs/qqmap-wx-jssdk.min');
-
+import key from './config/index'
+var QQMapWX = require('./libs/qqmap-wx-jssdk.min');
 
 
 App({
   onLaunch() {
-    
-
-
-
     wx.getSystemInfo({
       success: e => {
         this.globalData.StatusBar = e.statusBarHeight;
@@ -33,5 +28,10 @@ App({
     CustomBar: null,
     initLatitude: null,
     initLongitude: null,
+    sig: key.sig,
+    qqmapkey: key.qqmapkey,
+    qqmapsdk : new QQMapWX({
+      key: key.qqmapkey
+    })
   }
 })

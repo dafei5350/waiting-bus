@@ -1,8 +1,10 @@
 {
 	"pages": [
+		"pages/test/test",
 		"pages/index/index",
 		"pages/logs/logs",
 		"pages/city-list/city-list"
+		
 	],
 	"window": {
 		"backgroundTextStyle": "light",
