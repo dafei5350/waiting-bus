@@ -14,8 +14,18 @@
 			y="650rpx"
 			class="move-view" 
 			direction="vertical"
+			bind:touchstart="touchStart"
+		bind:touchend="touchEnd"
+		bind:touchcancel="touchCancel"
 			inertia="true">
-		
+			<view class="tips margin-top">
+				<text class="iconfont icon-updown {{height <= '40%'?'up':'down'}}"></text>
+			</view>
+			<view class="search">
+				<text class="cuIcon-search lg text-black"></text>
+				<text class="lg text-black margin-left-sm">搜公交线路、站点、目的地</text>
+				
+				</view>
 		</movable-view>
 	</movable-area>
 </view>

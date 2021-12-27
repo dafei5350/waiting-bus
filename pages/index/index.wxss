@@ -80,9 +80,6 @@ map {
 .move-container{
 	width: 100vw;
 	height: 100vh;
-	/* position: absolute;
-	bottom: 0; */
-	/* pointer-events: none; */
 }
 .move-view{
 	width: 100%;

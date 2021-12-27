@@ -66,7 +66,7 @@ Page({
       }
     })
   },
-  touchStart(e) {
+  touchMove(e) {
     startX = e.touches[0].pageX;
     startY = e.touches[0].pageY;
     startTime = new Date().getTime();
@@ -77,6 +77,7 @@ Page({
     startTime = 0;
   },
   touchEnd(e) {
+    console.log(e);
     let that = this
     var endX = e.changedTouches[0].pageX;
     var endY = e.changedTouches[0].pageY;

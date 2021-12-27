@@ -28,4 +28,35 @@ map {
 	bottom: 0;
 	overflow: hidden;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+.move-container .tips{
+	height: 5rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* margin-bottom: 15rpx; */
+}
+.move-container .tips .up{
+	font-size: 75rpx; 
+	color: #EEEEEE;
+}
+.move-container .tips .down{
+	font-size: 75rpx; 
+	color: #EEEEEE;
+	transform: rotate(-180deg);
+}
+ .search {
+	width: 95%;
+	height: 75rpx;
+	background-color: #F0F3F8;
+	border-radius: 5000rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 25rpx;
 }
